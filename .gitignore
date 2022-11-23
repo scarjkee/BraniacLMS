@@ -2,14 +2,20 @@
 __pycache__/
 *.py[cod]
 *$py.class
+<<<<<<< HEAD
 test.py
+=======
+>>>>>>> 2001b77 (Initial commit)
 
 # C extensions
 *.so
 
 # Distribution / packaging
 .Python
+<<<<<<< HEAD
 var/
+=======
+>>>>>>> 2001b77 (Initial commit)
 build/
 develop-eggs/
 dist/
@@ -160,6 +166,7 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+<<<<<<< HEAD
 
 .vscode/*
 !.vscode/settings.json
@@ -174,6 +181,8 @@ cython_debug/
 # Built Visual Studio Code Extensions
 *.vsix
 
+=======
+>>>>>>> 2001b77 (Initial commit)
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
@@ -251,5 +260,8 @@ fabric.properties
 
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 2001b77 (Initial commit)
