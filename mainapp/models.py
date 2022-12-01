@@ -49,6 +49,10 @@ class Courses(models.Model):
         self.deleted = True
         self.save()
 
+    class Meta:
+        verbose_name = _("Courses")
+        verbose_name_plural = _("Paid Courses")
+        ordering = ("-created",)
 
 class CourseFeedback(models.Model):
     RATING = ((5, "⭐⭐⭐⭐⭐"), (4, "⭐⭐⭐⭐"), (3, "⭐⭐⭐"), (2, "⭐⭐"), (1, "⭐"))
