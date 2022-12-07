@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = "django-insecure-pd&w016(#3#_th*$r03ak@%e^o(6qhua=#-#b2oxvt_y1dg(em
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -80,7 +78,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "config.wsgi.application"
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
@@ -90,7 +87,6 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -136,7 +132,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
@@ -171,8 +166,11 @@ LOGGING = {
     "disable_existing_loggers": False,
     "formatters": {
         "console": {
-            "format": "[%(asctime)s] %(levelname)s %(name)s (%(lineno)d) %(message)s"
+            "format": "[%(asctime)s] // %(levelname)s // %(name)s // (%(lineno)d) // %(message)s"
         },
+        "mail": {
+            "format": "[%(asctime)s] //// %(name)s // %(message)s // %(funcName)s"
+        }
     },
     "handlers": {
         "file": {
@@ -181,7 +179,13 @@ LOGGING = {
             "filename": LOG_FILE,
             "formatter": "console",
         },
+        "mail_admins": {
+            "level": "DEBUG",
+            "class": "django.utils.log.AdminEmailHandler",
+            "formatter": "mail"
+        },
         "console": {"class": "logging.StreamHandler", "formatter": "console"},
+        "mail": {"class": "logging.StreamHandler", "formatter": "mail"},
     },
     "loggers": {
         "django": {"level": "INFO", "handlers": ["console"]},
@@ -189,8 +193,10 @@ LOGGING = {
             "level": "DEBUG",
             "handlers": ["file"],
         },
+        "django.request": {"level": "DEBUG", "handlers": ["mail_admins"]},
     },
 }
+
 
 ALLOWED_HOSTS = ["*"]
 
@@ -199,7 +205,6 @@ if DEBUG:
         "192.168.1.4",
         "127.0.0.1",
     ]
-
 
 # Application definition
 
@@ -239,3 +244,18 @@ CACHES = {
         },
     }
 }
+
+ADMINS = (
+    ('admin', 'frigtfullscar@mail.ru'),
+)
+
+EMAIL_SUBJECT_PREFIX = '[djangoProject] '
+EMAIL_HOST = 'smtp.mail.ru'
+EMAIL_HOST_USER = 'frigtfullscar'
+EMAIL_HOST_PASSWORD = 'iHY72ENZ1jehG3Hj1bAx'
+EMAIL_PORT = 465
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+
+SERVER_EMAIL = 'frigtfullscar@mail.ru'
+DEFAULT_FROM_EMAIL = 'frigtfullscar@mail.ru'
