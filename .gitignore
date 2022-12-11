@@ -1,4 +1,5 @@
 # Byte-compiled / optimized / DLL files
+.gitignore
 __pycache__/
 *.py[cod]
 *$py.class
@@ -12,10 +13,7 @@ test.py
 
 # Distribution / packaging
 .Python
-<<<<<<< HEAD
 var/
-=======
->>>>>>> 2001b77 (Initial commit)
 build/
 develop-eggs/
 dist/
